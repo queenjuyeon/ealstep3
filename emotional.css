@@ -1,0 +1,124 @@
+body{
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.background img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+@media (max-width: 70vw) {
+/* 메인 이미지 */
+  #mainImage {
+        position: absolute;
+        top: 52%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        width: 70vw; /* 최대 가로폭 설정 */
+        max-width: 70vw;
+        height: auto;  
+        max-height: 80vh;
+        object-fit: contain; /* 이미지 비율 유지하며 영역 내에 맞춤 */
+        z-index: 10;
+        transition: 0.3s ease;
+        }
+}
+
+  #youtubeFrame {
+        position: absolute;
+        top: 52%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        width: 60vw; /* 기존보다 조금 더 크게 */
+        height: 50vh; /* 16:9 비율 유지 */
+        max-height: 80vh;
+        z-index: 10;
+        transition: 0.3s ease;
+        display: none;
+        
+      }
+
+/* 썸네일 리스트 */
+  .thumbnails {
+    position: absolute;
+    top: 52%;
+    right: 3vw;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    z-index: 11;
+  }
+
+  /* 썸네일 이미지 */
+  .thumbnails img {
+    width: 6vw;
+    height: 10vh;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+
+  .thumbnails img.active {
+    opacity: 1;
+    transform: scale(1.1);
+    z-index: 2;
+  }
+
+
+/* 카테고리 버튼 (선택적 스타일) */
+  .category-buttons {
+    position: fixed;
+    left: 2vw;
+    top: 50vh ;
+    z-index: 100;
+    display: flex;
+    gap: 1.5vh;
+    flex-direction: column
+  }
+
+  .category-buttons button {
+    font-family: 'Pretendard', sans-serif;
+      all: unset; /* 기본 버튼 스타일 제거 */
+      font-size: 0.8rem;
+      cursor: pointer;
+      text-align: left;
+      color: white;
+  }
+
+.category-buttons button:hover {
+  text-decoration: underline;
+}
+
+
+.back-button {
+    position: fixed;
+    top: 8vh; 
+    left: 15vw;
+    z-index: 1000;
+    color: black;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 0.8rem;  /* 폰트 크기를 rem으로 설정 */
+    opacity: 0.5;
+  }
+
+.back-button:hover {
+  text-decoration: underline;
+  opacity: 1;
+}

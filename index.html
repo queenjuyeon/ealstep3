@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title> </title>
+        <script src="main.js" defer></script>
+        <link rel="stylesheet" href="main.css"
+        type="text/css" 
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <style>
+    body {
+    font-family: 'Pretendard', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* 배경 고정 */
+  .background img {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  /* 스크롤이 필요한 영역 (사용 여부에 따라 조절) */
+  .container {
+    position: relative;
+    width: 100%;
+    height: 1800px;
+  }
+   </style>
+   
+</head>
+
+
+
+<body>
+    <div class="background"> <!-- 배경이미지 -->
+      <img src="https://cdn.glitch.global/0a5d2682-7616-407b-9085-ffe7abe7f40d/main%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%E1%84%87%E1%85%A9%E1%84%83%E1%85%B3%205.jpg?v=1751353879296"
+            alt="Background Image">
+    </div> 
+  
+<header>
+  <div class="emotion-menu-wrapper">
+      <div class="emotion-menu-trigger"></div>
+      <div class="emotion-menu-container" id="emotionMenu">
+      <ul class="emotion-menu">
+        <li><a href="main_neutral.html">NEUTRAL</a></li>
+        <li><a href="main_joy.html">JOY</a></li>
+        <li><a href="main_sadness.html">SADNESS</a></li>
+        <li><a href="main_anger.html">ANGER</a></li>
+        <li><a href="main_fear.html">FEAR</a></li>
+        <li><a href="main_surprise.html">SURPRISE</a></li>
+        <li><a href="main_disgust.html">DISGUST</a></li>
+      </ul>
+      </div>
+   </div>
+
+   <div class="menu-overlay"></div>
+
+    </header>
+
+    <main>
+
+      <div class="category-buttons">
+        <button class="main-drama" onclick="location.href='neutral.html#drama'">드라마/극</button>
+        <button class="main-literature" onclick="location.href='neutral.html#literature'">문학</button>
+        <button class="main-art" onclick="location.href='neutral.html#art'">예술/디자인</button>
+        <button class="main-music" onclick="location.href='neutral.html#music'">음악/사운드</button>
+        <button class="main-lifestyle" onclick="location.href='neutral.html#lifestyle'">라이프스타일</button>
+        <button class="main-nature" onclick="location.href='neutral.html#nature'">자연/풍경</button>
+        <button class="main-humour" onclick="location.href='neutral.html#humour'">유머/실험</button>
+      </div>
+    </main>
+
+
+</body>
+  
+
+</html>

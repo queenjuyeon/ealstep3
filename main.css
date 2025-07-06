@@ -1,0 +1,167 @@
+.background-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  
+}
+
+
+.emotion-menu-wrapper {
+  position: fixed;
+  bottom: 10vh;
+  left: 5vh;
+  z-index: 200;
+}
+
+.emotion-menu-trigger {
+  background: cyan;
+  padding: 4vw 3vw;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  opacity: 0;
+}
+
+
+.emotion-menu-container {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: 1vh;
+
+  
+  left: -4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(4vh);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.emotion-menu-container.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.emotion-menu {
+  list-style: none;
+  margin: 0;
+  padding: 1.5vh 2vw;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.emotion-menu a {
+  all: unset;
+  color: white;
+  font-size: 1rem;
+  padding: 1vh 2vw;
+  cursor: pointer;
+}
+
+
+.emotion-menu li :hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5); /* 어두운 배경 */
+  backdrop-filter: blur(5px);
+  z-index: 90;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+
+
+.main-drama, .main-literature, .main-art, 
+.main-music, .main-lifestyle, .main-nature, .main-humour {
+  position: fixed;
+  
+  /* padding을 상대적인 단위로 설정하여 과도한 크기 방지 */
+  padding: 5vw 8vw;  /* padding을 vw로 설정하여 반응형으로 변경 */
+
+  /* 최소 크기와 최대 크기 제한 */
+  min-width: 150px;  /* 최소 너비 */
+  max-width: 400px;  /* 최대 너비 */
+  min-height: 50px;  /* 최소 높이 */
+  max-height: 150px; /* 최대 높이 */
+
+  z-index: 100;
+  opacity: 0;
+}
+
+
+/* 특정 카테고리 버튼 위치 조정 */
+.main-drama {
+  top: 20vh; /* 화면의 25% 위치 */
+  left: 15vw; /* 화면의 20% 왼쪽 */
+}
+
+.main-literature {
+  top: 45vh;
+  left: 5vw;
+}
+
+.main-art {
+  bottom: 20vh;
+  left: 20vw;
+}
+
+.main-music {
+  bottom: 15vh;
+  left: 40vw;
+}
+
+.main-lifestyle {
+  bottom: 15vh;
+  right: 25vw;
+}
+
+.main-nature {
+  top: 45vh;
+  right: 5vw;
+}
+
+.main-humour {
+  top: 20vh;
+  right: 30vw;
+}
+
+/* 카테고리 버튼에 마우스 올리기 */
+.category-buttons:hover {
+  cursor: pointer;
+}
+
+
+
+.category-buttons :hover {
+    cursor: pointer;
+}
