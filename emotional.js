@@ -30,10 +30,7 @@ document.querySelectorAll('.thumb[data-type="youtube"]').forEach((thumb) => {
     const img = document.createElement('img');
     img.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
     img.alt = 'YouTube Thumbnail';
-    img.style.width = '7vh';
-    img.style.height = '9.5vw';
-    img.style.objectFit = 'fill';
-    img.style.cursor = 'pointer';
+    img.classList.add('youtubethumb-img');
     thumb.appendChild(img);
   }
 });
@@ -121,10 +118,7 @@ buttons.forEach((button) => {
         const img = document.createElement('img');
         img.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
         img.alt = 'YouTube Thumbnail';
-        img.style.width = '7vw';
-        img.style.height = '9.5vh';
-        img.style.objectFit = 'cover';
-        img.style.cursor = 'pointer';
+        img.classList.add('youtubethumb-img');
         thumb.appendChild(img);
       }
 
