@@ -137,3 +137,36 @@ if (location.hash) {
   const targetButton = document.querySelector(`[data-category="${hash}"]`);
   if (targetButton) targetButton.click();
 }
+
+// ↓ 여기에 화살표 키 네비게이션 코드를 추가하세요 ↓
+
+// 1) 썸네일 NodeList 를 배열로
+const thumbs = Array.from(document.querySelectorAll('.thumb'));
+
+// 2) 초기 currentIndex 계산
+let currentIndex = thumbs.findIndex(t => t.classList.contains('active'));
+if (currentIndex < 0) currentIndex = 0;
+
+// 3) 클릭할 때마다 currentIndex 업데이트
+thumbs.forEach((thumb, i) => {
+  thumb.addEventListener('click', () => {
+    currentIndex = i;
+    // 기존 클릭 로직은 그대로 동작합니다
+  });
+});
+
+// 4) 키보드 화살표 이벤트 핸들러
+document.addEventListener('keydown', e => {
+  // input/textarea 포커스 시 무시
+  const tag = document.activeElement.tagName.toLowerCase();
+  if (tag === 'input' || tag === 'textarea') return;
+
+  if (e.key === 'ArrowRight') {
+    const next = currentIndex + 1;
+    if (next < thumbs.length) thumbs[next].click();
+  }
+  else if (e.key === 'ArrowLeft') {
+    const prev = currentIndex - 1;
+    if (prev >= 0) thumbs[prev].click();
+  }
+});
