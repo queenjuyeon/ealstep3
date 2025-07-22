@@ -128,8 +128,7 @@ buttons.forEach((button) => {
   });
 });
 
-// ✅ 페이지 로드 시 기본 카테고리 선택
-document.querySelector('[data-category="drama"]').click();
+
 
 // ✅ URL 해시(#drama 등)로 카테고리 자동 클릭
 if (location.hash) {
