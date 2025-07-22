@@ -137,3 +137,19 @@ if (location.hash) {
   const targetButton = document.querySelector(`[data-category="${hash}"]`);
   if (targetButton) targetButton.click();
 }
+
+// 4) 키보드 화살표 이벤트 핸들러
+document.addEventListener('keydown', e => {
+  // input/textarea 포커스 시 무시
+  const tag = document.activeElement.tagName.toLowerCase();
+  if (tag === 'input' || tag === 'textarea') return;
+
+  if (e.key === 'ArrowRight') {
+    const next = currentIndex + 1;
+    if (next < thumbs.length) thumbs[next].click();
+  }
+  else if (e.key === 'ArrowLeft') {
+    const prev = currentIndex - 1;
+    if (prev >= 0) thumbs[prev].click();
+  }
+});
