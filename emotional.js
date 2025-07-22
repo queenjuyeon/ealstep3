@@ -129,12 +129,30 @@ buttons.forEach((button) => {
 });
 
 
+
 // ✅ URL 해시(#drama 등)로 카테고리 자동 클릭
 if (location.hash) {
   const hash = location.hash.replace('#', '');
   const targetButton = document.querySelector(`[data-category="${hash}"]`);
   if (targetButton) targetButton.click();
 }
+
+// ↓ 여기에 화살표 키 네비게이션 코드를 추가하세요 ↓
+
+// 1) 썸네일 NodeList 를 배열로
+const thumbs = Array.from(document.querySelectorAll('.thumb'));
+
+// 2) 초기 currentIndex 계산
+let currentIndex = thumbs.findIndex(t => t.classList.contains('active'));
+if (currentIndex < 0) currentIndex = 0;
+
+// 3) 클릭할 때마다 currentIndex 업데이트
+thumbs.forEach((thumb, i) => {
+  thumb.addEventListener('click', () => {
+    currentIndex = i;
+    // 기존 클릭 로직은 그대로 동작합니다
+  });
+});
 
 // 4) 키보드 화살표 이벤트 핸들러
 document.addEventListener('keydown', e => {
